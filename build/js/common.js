@@ -89,14 +89,25 @@ head.ready(function(){
 		});
 	}());
 
-	// Popup
+	// Popup Calc
 	(function () {
 		$('.green-btn').on('click', function () {
-			$('.popup').fadeIn();
+			$('.popup__calc').fadeIn();
 		});
 
 		$('.popup__close').on('click', function () {
-			$(this).closest('.popup').fadeOut();
+			$(this).closest('.popup__calc').fadeOut();
+		});
+	}());
+
+	// Popup Recall
+	(function () {
+		$('.header__recall').on('click', function () {
+			$('.popup__recall').fadeIn();
+		});
+
+		$('.popup__close').on('click', function () {
+			$(this).closest('.popup__recall').fadeOut();
 		});
 	}());
 
