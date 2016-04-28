@@ -63,7 +63,7 @@ head.ready(function(){
 					post_data = _this.serialize();
 
 			//Ajax post data to server
-			$.post('call.php', post_data, function(response){
+			$.post('mail.php', post_data, function(response){
 				if (response.type == 'error'){
 					// your code here
 				} else {

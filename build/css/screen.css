@@ -772,6 +772,24 @@ body {
 .auction .counter__rect + .counter__rect + .counter__rect + .counter__rect {
   left: 276px;
 }
+.auction .counter__text {
+  position: absolute;
+  bottom: -20px;
+  left: 67px;
+  font-family: "Helvetica Light", Arial, sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 16px;
+}
+.auction .counter__text + .counter__text {
+  left: 136px;
+}
+.auction .counter__text + .counter__text + .counter__text {
+  left: 205px;
+}
+.auction .counter__text + .counter__text + .counter__text + .counter__text {
+  left: 274px;
+}
 .auction__col {
   float: left;
   width: 50%;
