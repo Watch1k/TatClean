@@ -78,4 +78,15 @@ head.ready(function(){
 		});
 	}());
 
+	// nav Scroll
+	(function () {
+		$('.header__nav a').on('click', function (e) {
+			e.preventDefault();
+			var _this = $(this),
+					el = _this.attr('href').substr(1),
+					elScroll = $('#' + el).offset().top
+			$('html, body').animate({ scrollTop: elScroll}, 'slow');
+		});
+	}());
+
 });
