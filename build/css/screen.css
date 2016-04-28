@@ -507,6 +507,7 @@ body {
 }
 
 .advantages {
+  padding-bottom: 80px;
   color: #0e1b28;
 }
 .advantages__el {
@@ -561,6 +562,7 @@ body {
   position: relative;
   margin-top: -180px;
   margin-left: -20px;
+  margin-bottom: 20px;
   padding: 75px;
   background: url("../img/bg_action.png") 0 0 no-repeat;
   width: 1000px;
