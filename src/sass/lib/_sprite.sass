@@ -1,0 +1,84 @@
+$icons: (0:0)
+$icons: map-merge($icons,(cert: (X: -230px, Y:0px, W: 84px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(clock: (X: 0px, Y:0px, W: 111px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(original: (X: 0px, Y:-115px, W: 105px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(percent: (X: -115px, Y:0px, W: 111px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(pig: (X: -109px, Y:-115px, W: 111px, H: 104px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(pocket: (X: 0px, Y:-230px, W: 104px, H: 81px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2
+@mixin sprite-position-retina($iconName)
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)
+@mixin spr($i)
+	+sprite-position-retina($i)
+
+.icon-cert
+	width: 84px
+	height: 111px
+	background-image: url('../img/icons.png')
+	background-position: -230px 0px
+	background-size: 314px 311px
+.icon-clock
+	width: 111px
+	height: 111px
+	background-image: url('../img/icons.png')
+	background-position: 0px 0px
+	background-size: 314px 311px
+.icon-original
+	width: 105px
+	height: 111px
+	background-image: url('../img/icons.png')
+	background-position: 0px -115px
+	background-size: 314px 311px
+.icon-percent
+	width: 111px
+	height: 111px
+	background-image: url('../img/icons.png')
+	background-position: -115px 0px
+	background-size: 314px 311px
+.icon-pig
+	width: 111px
+	height: 104px
+	background-image: url('../img/icons.png')
+	background-position: -109px -115px
+	background-size: 314px 311px
+.icon-pocket
+	width: 104px
+	height: 81px
+	background-image: url('../img/icons.png')
+	background-position: 0px -230px
+	background-size: 314px 311px
