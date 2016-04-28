@@ -57,7 +57,7 @@ head.ready(function(){
 
 	// Ajax Form
 	(function () {
-		$('.form-auction').submit(function (e) {
+		$('.form-auction, .popup__form').submit(function (e) {
 			e.preventDefault();
 			var _this = $(this),
 					post_data = _this.serialize();
@@ -68,9 +68,9 @@ head.ready(function(){
 					// your code here
 				} else {
 					// your code here
-					_this.find('.popup__help').slideDown();
+					_this.find('.form-auction__help, .popup__help').slideDown();
 					setTimeout(function () {
-						_this.find('.popup__help').slideUp();
+						_this.find('.form-auction__help, .popup__help').slideUp();
 						_this.trigger('reset');
 					},5000);
 				}
@@ -86,6 +86,17 @@ head.ready(function(){
 					el = _this.attr('href').substr(1),
 					elScroll = $('#' + el).offset().top
 			$('html, body').animate({ scrollTop: elScroll}, 'slow');
+		});
+	}());
+
+	// Popup
+	(function () {
+		$('.green-btn').on('click', function () {
+			$('.popup').fadeIn();
+		});
+
+		$('.popup__close').on('click', function () {
+			$(this).closest('.popup').fadeOut();
 		});
 	}());
 
