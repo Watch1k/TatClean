@@ -11,6 +11,20 @@
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/lib/html5shiv.js"></script><![endif]-->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		function initialize() {
+			var mapProp = {
+				center:new google.maps.LatLng(51.508742,-0.120850),
+				zoom:15,
+				scrollwheel: true,
+				draggable: true,
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+			var map=new google.maps.Map(document.getElementById("map"),mapProp);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 <body>
 <!-- begin wrapper  -->
@@ -30,10 +44,10 @@
 
 		<div class="header__bottom">
 			<div class="wrap">
-				<div class="logo">
+				<a href="index.html" class="logo">
 					<h1 class="logo__title">Tat Cleaning</h1>
 					<img src="img/logo.png" alt="Tat Cleaning" class="logo__img">
-				</div>
+				</a>
 
 				<div class="header__desc">
 					<div class="header__text">Профессиональная уборка помещений</div>
@@ -69,7 +83,13 @@
 					<div class="auction__title">Акция</div>
 					<div class="auction__desc">Только сегодня! При заказе генеральной уборки— мойка окон в подарок!</div>
 					<div class="auction__text">До конца акции осталось</div>
-					<div class="counter counter_1"></div>
+					<div class="counter">
+						<div class="counter__value"></div>
+						<div class="counter__rect"></div>
+						<div class="counter__rect"></div>
+						<div class="counter__rect"></div>
+						<div class="counter__rect"></div>
+					</div>
 				</div>
 				<div class="auction__col auction__col_right">
 					<form class="form-auction form-auction_1">
@@ -210,35 +230,222 @@
 							<img src="img/content/img_9.jpg" alt="image" class="card__img">
 						</div>
 						<div class="card__inner">
-						<div class="card__name">Подсобные рабочие</div>
-						<div class="green-btn">Рассчитать стоимость</div>
+							<div class="card__name">Подсобные рабочие</div>
+							<div class="green-btn">Рассчитать стоимость</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="work wrap">
-			<div class="title">Как мы работаем</div>
-			<div class="subtitle">Как мы работаем</div>
+		<section class="work">
+			<div class="wrap">
+				<div class="title">Как мы работаем</div>
+				<div class="subtitle">Всего 5 шагов и ваша квартира, офис или дом будут сверкать чистотой!</div>
 
-			<div class="work__text work__text_1"></div>
-			<div class="work__text work__text_2"></div>
-			<div class="work__text work__text_3"></div>
-			<div class="work__text work__text_4"></div>
-			<div class="work__text work__text_5"></div>
+				<div class="work__text work__text_1">Вы оставляете заявку</div>
+				<div class="work__text work__text_2">Наш менеджер связывается с Вами, отвечает на все вопросы</div>
+				<div class="work__text work__text_3">Согласовываем сроки и фронт работы</div>
+				<div class="work__text work__text_4">Мы выполняем Ваш заказ</div>
+				<div class="work__text work__text_5">Оплачиваете заказ любым удобным Вам способом</div>
 
-			<div class="work__number work__number_1">1</div>
-			<div class="work__number work__number_2">2</div>
-			<div class="work__number work__number_3">3</div>
-			<div class="work__number work__number_4">4</div>
-			<div class="work__number work__number_5">5</div>
+				<div class="work__number work__number_1">1</div>
+				<div class="work__number work__number_2">2</div>
+				<div class="work__number work__number_3">3</div>
+				<div class="work__number work__number_4">4</div>
+				<div class="work__number work__number_5">5</div>
+			</div>
+		</section>
+
+		<section class="projects">
+			<div class="wrap">
+				<div class="auction">
+					<div class="auction__col auction__col_left">
+						<div class="auction__title">Акция</div>
+						<div class="auction__desc">Только сегодня! При заказе генеральной уборки— мойка окон в подарок!</div>
+						<div class="auction__text">До конца акции осталось</div>
+						<div class="counter">
+							<div class="counter__value"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+						</div>
+					</div>
+					<div class="auction__col auction__col_right">
+						<form class="form-auction form-auction_1">
+							<input class="form-auction__input" type="text" name="user_name" placeholder="Ваше имя" required>
+							<input class="form-auction__input" type="text" name="user_phone" placeholder="Номер телефона" required>
+							<button type="submit" class="green-btn">Получить мойку окон в подарок</button>
+							<div class="form-auction__help">Письмо отправлено!</div>
+						</form>
+					</div>
+				</div>
+				<div class="title">Наши работы</div>
+				<div class="subtitle">Посмотрите на потрясающие результаты нашей работы</div>
+				<div class="slider">
+					<div class="slider__el">
+						<div class="slider__img">
+							<img src="img/slider-img.jpg" alt="image">
+							<div class="slider__col slider__col_left">
+								<div class="slider__before">До уборки</div>
+							</div>
+							<div class="slider__col slider__col_right">
+								<div class="slider__after">После уборки</div>
+							</div>
+						</div>
+						<div class="slider__desc">
+							<div class="slider__col">
+								<div class="slider__square">Уборная площадь: <span>138 кв м<sup>2</sup></span></div>
+							</div>
+							<div class="slider__col">
+								<div class="slider__time">Время уборки: <span>3 часа 48 минут</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="slider__el">
+						<div class="slider__img">
+							<img src="img/slider-img.jpg" alt="image">
+							<div class="slider__col slider__col_left">
+								<div class="slider__before">До уборки</div>
+							</div>
+							<div class="slider__col slider__col_right">
+								<div class="slider__after">После уборки</div>
+							</div>
+						</div>
+						<div class="slider__desc">
+							<div class="slider__col">
+								<div class="slider__square">Уборная площадь: <span>138 кв м<sup>2</sup></span></div>
+							</div>
+							<div class="slider__col">
+								<div class="slider__time">Время уборки: <span>3 часа 48 минут</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="slider__el">
+						<div class="slider__img">
+							<img src="img/slider-img.jpg" alt="image">
+							<div class="slider__col slider__col_left">
+								<div class="slider__before">До уборки</div>
+							</div>
+							<div class="slider__col slider__col_right">
+								<div class="slider__after">После уборки</div>
+							</div>
+						</div>
+						<div class="slider__desc">
+							<div class="slider__col">
+								<div class="slider__square">Уборная площадь: <span>138 кв м<sup>2</sup></span></div>
+							</div>
+							<div class="slider__col">
+								<div class="slider__time">Время уборки: <span>3 часа 48 минут</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="comments">
+			<div class="wrap">
+				<div class="title">Отзывы клиентов</div>
+				<div class="subtitle">Почитайте что говорят о нас наши любимые клиенты</div>
+				<div class="slider-com">
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-1.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Дамир, 23 года</div>
+						<div class="slider-com__text">Всё было сделано на отлично. Приехали вовремя, работу сделали качественно. Приятно иметь дело с профессионалами. Буду обращаться ещё!</div>
+					</div>
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-2.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Ирина</div>
+						<div class="slider-com__text">Все очень понравилось. Женщина очень порядочная, чистоплотная! Всё очень хорошо убирает. Нам все очень понравилось. Всем советую</div>
+					</div>
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-3.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Ирина, 29 лет</div>
+						<div class="slider-com__text">Все убрали хорошо, как и обещали) качественно. Вежливые, ответственные. Рекомендую</div>
+					</div>
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-1.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Дамир, 23 года</div>
+						<div class="slider-com__text">Всё было сделано на отлично. Приехали вовремя, работу сделали качественно. Приятно иметь дело с профессионалами. Буду обращаться ещё!</div>
+					</div>
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-2.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Ирина</div>
+						<div class="slider-com__text">Все очень понравилось. Женщина очень порядочная, чистоплотная! Всё очень хорошо убирает. Нам все очень понравилось. Всем советую</div>
+					</div>
+					<div class="slider-com__el">
+						<div class="slider-com__img">
+							<img src="img/content/client-3.png" alt="photo">
+						</div>
+						<div class="slider-com__client">Ирина, 29 лет</div>
+						<div class="slider-com__text">Все убрали хорошо, как и обещали) качественно. Вежливые, ответственные. Рекомендую</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="map">
+			<div class="wrap">
+				<div class="auction">
+					<div class="auction__col auction__col_left">
+						<div class="auction__title">Акция</div>
+						<div class="auction__desc">Только сегодня! При заказе генеральной уборки— мойка окон в подарок!</div>
+						<div class="auction__text">До конца акции осталось</div>
+						<div class="counter">
+							<div class="counter__value"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+							<div class="counter__rect"></div>
+						</div>
+					</div>
+					<div class="auction__col auction__col_right">
+						<form class="form-auction form-auction_1">
+							<input class="form-auction__input" type="text" name="user_name" placeholder="Ваше имя" required>
+							<input class="form-auction__input" type="text" name="user_phone" placeholder="Номер телефона" required>
+							<button type="submit" class="green-btn">Получить мойку окон в подарок</button>
+							<div class="form-auction__help">Письмо отправлено!</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="map"></div>
 		</section>
 	</main>
 </div><!-- end wrapper -->
 
 <!-- begin footer  -->
 <footer class="footer">
+	<div class="footer__bottom">
+		<div class="wrap">
+			<a href="index.html" class="logo">
+				<h1 class="logo__title">Tat Cleaning</h1>
+				<img src="img/logo.png" alt="Tat Cleaning" class="logo__img">
+			</a>
 
+			<div class="footer__desc">
+				<div class="footer__text">Профессиональная уборка помещений</div>
+				<div class="footer__text">в Москве и Московской области</div>
+			</div>
+
+			<div class="footer__call">
+				<div class="footer__number">8 (926) <span class="footer__el">522-07-52</span></div>
+				<div class="footer__recall">Заказать обратный звонок</div>
+			</div>
+		</div>
+	</div>
 </footer><!-- end footer -->
 <script src="js/lib/head.js" data-headjs-load="js/app.js"></script>
 </body>

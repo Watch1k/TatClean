@@ -115,6 +115,7 @@ body
 		display: inline-block
 		font-size: 14px
 		color: #2fae42
+		cursor: pointer
 		border-bottom: 2px dotted #2fae42
 		line-height: 22px
 .logo
@@ -129,6 +130,37 @@ body
    ========================================================================== */
 .footer
 	height: 40px
+	&__bottom
+		padding: 17px 0 8px
+		background-image: linear-gradient(to top, white 0%, #f6f6f6 100%)
+		+pie-clearfix
+	.logo
+		float: left
+		margin-top: 20px
+		margin-right: 25px
+	&__desc
+		float: left
+		margin-top: 13px
+		font-size: 12px
+		color: #727c87
+		line-height: 18px
+	&__call
+		float: right
+		padding-bottom: 10px
+		font-size: 24px
+	&__number
+		color: #0e1b28
+	&__el
+		font-family: $helv-b
+	&__recall
+		position: relative
+		top: -5px
+		display: inline-block
+		font-size: 14px
+		color: #2fae42
+		cursor: pointer
+		border-bottom: 2px dotted #2fae42
+		line-height: 22px
 /* ==========================================================================
    Main
    ========================================================================== */
@@ -264,17 +296,40 @@ body
 .auction
 	position: relative
 	margin-top: -180px
-	margin-left: -20px
-	margin-bottom: 20px
-	padding: 75px
+	padding: 75px 75px 90px
 	background: url('../img/bg_action.png') 0 0 no-repeat
 	width: 1000px
 	height: 437px
 	+pie-clearfix
+	.counter
+		position: relative
+		margin-top: 20px
+		&__value
+			position: relative
+			z-index: 2
+			font-size: 36px
+			line-height: 42px
+		&__rect
+			position: absolute
+			z-index: 1
+			top: -6px
+			left: 65px
+			width: 52px
+			height: 50px
+			background-image: linear-gradient(to top, #091a31 0%, #0b213d 100%)
+			border-radius: 2px
+			box-shadow: 0 2px 2px #14335b
+			& + .counter__rect
+				left: 136px
+				& + .counter__rect
+					left: 206px
+					& + .counter__rect
+						left: 276px
 	&__col
 		float: left
 		width: 50%
 		&_left
+			margin-top: 20px
 			padding-right: 30px
 			color: #fff
 			text-align: center
@@ -302,6 +357,7 @@ body
 			color: #14335b
 			line-height: 50px
 			background-image: linear-gradient(to top, #fcfcfc 0%, #f2f2f2 100%)
+			+placeholder-color(#14335b)
 			& + .form-auction__input
 				margin-top: 10px
 				margin-bottom: 20px
@@ -356,22 +412,218 @@ body
 		bottom: 30px
 		height: 46px
 		line-height: 46px
+/*-------------- Work ---------------*/
 .work
 	position: relative
-	height: 1025px
-	background: url('../img/bg_work.png') center center no-repeat
+	background-image: linear-gradient(to top, white 0%, #eaf1f1 100%)
+	.wrap
+		position: relative
+		padding-top: 70px
+		height: 1025px
+		background: url('../img/bg_work.png') center center no-repeat
+	&__text
+		position: absolute
+		z-index: 1
+		font-size: 14px
+		color: #0e1b28
+		line-height: 24px
+		&_1
+			top: 292px
+			left: 736px
+		&_2
+			left: 827px
+			top: 476px		
+		&_3
+			left: 736px
+			top: 692px
+			width: 150px
+		&_4
+			top: 697px
+			left: 120px
+			width: 140px
+			text-align: right
+		&_5
+			top: 477px
+			left: 20px
+			width: 140px
+			text-align: right
 	&__number
 		position: absolute
 		z-index: 1
-		color: #000000
+		color: #fff
 		font-size: 36px
 		&_1
+			top: 286px
+			left: 676px
 		&_2
+			left: 767px
+			top: 491px			
 		&_3
+			left: 676px
+			top: 697px
 		&_4
-			top: 696px
+			top: 697px
 			left: 305px
 		&_5
+			top: 491px
+			left: 206px
+/*-------------- Projects ---------------*/
+.projects
+	margin-top: 20px
+	padding-top: 180px
+	padding-bottom: 80px
+	color: #fff
+	background: url('../img/bg_projects.jpg') 0 0 no-repeat
+	.auction
+		margin-top: -360px
+		margin-bottom: 40px
+.slider
+	margin: 70px auto 0
+	width: 860px
+	height: 580px
+	background-color: #FFF
+	box-shadow: 0 20px 30px rgba(24, 60, 106, 0.4)
+	sup
+		position: relative
+		top: -6px
+		left: 1px
+		font-size: 12px
+	&__el
+		position: relative
+	&__img
+		position: relative
+		height: 500px
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
+	&__col
+		width: 50%
+		&_left
+			position: absolute
+			z-index: 1
+			left: 0
+			top: 0
+			bottom: 0
+			border-right: 2px solid #47af44
+			background-color: rgba(0,0,0,.3)
+		&_right
+			position: absolute
+			z-index: 1
+			left: 50%
+			top: 0
+			bottom: 0
+			border-left: 2px solid #47af44
+	&__before
+		position: absolute
+		z-index: 1
+		top: 40px
+		left: 70px
+		padding-left: 25px
+		padding-right: 25px
+		font-size: 14px
+		color: #fff
+		line-height: 40px
+		background-color: rgba(0,0,0,.7)
+	&__after
+		position: absolute
+		z-index: 1
+		top: 40px
+		right: 70px
+		padding-left: 25px
+		padding-right: 25px
+		font-size: 14px
+		color: #fff
+		line-height: 40px
+		background-color: rgba(41,152,62,.7)
+	&__desc
+		height: 80px
+		font-size: 18px
+		color: #0e1b28
+		line-height: 80px
+		span
+			font-family: $helv-b
+		.slider__col
+			display: inline-block
+			margin-right: -4px
+	&__square
+		padding-right: 30px
+		text-align: right
+	&__time
+		text-align: left
+		padding-left: 15px
+	.slick-prev,
+	.slick-next
+		position: absolute
+		z-index: 2
+		top: 250px
+		background-color: transparent
+	.slick-prev
+		left: 60px
+	.slick-next
+		right: 60px
+	.icon
+		display: block
+/*-------------- Comments ---------------*/
+.comments
+	padding-top: 70px
+	padding-bottom: 280px
+	background-image: linear-gradient(to top, #eaf1f1 0%, white 100%)
+.slider-com
+	margin-top: 70px
+	margin-left: 50px
+	margin-right: 50px
+	&__el
+		text-align: center
+		cursor: pointer
+	&__img
+		overflow: hidden
+		margin: 0 auto
+		width: 120px
+		height: 120px
+	&__client
+		margin-top: 7px
+		font-size: 18px
+		color: #26963b
+		line-height: 30px
+	&__text
+		margin-top: 5px
+		padding-left: 15px
+		padding-right: 15px
+		font-size: 14px
+		line-height: 24px
+	.slick-dots
+		margin-top: 20px
+		text-align: center
+		li
+			display: inline-block
+			margin-left: 5px
+			margin-right: 5px
+			button
+				overflow: hidden
+				width: 20px
+				height: 20px
+				background-color: #fff
+				border: 2px solid #214871
+				border-radius: 100%
+				text-indent: -9999px
+			&.slick-active
+				button
+					background-color: #26963b
+					border-color: transparent
+/*-------------- Map ---------------*/
+.map
+	position: relative
+	.auction
+		position: absolute
+		top: 0
+		width: 960px
+		padding: 75px
+		z-index: 1
+		.counter__rect
+			transform: translateX(-10px)
+#map
+	height: 410px
 /* ==========================================================================
    Other Styles
    ========================================================================== */

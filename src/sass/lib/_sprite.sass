@@ -1,10 +1,12 @@
 $icons: (0:0)
 $icons: map-merge($icons,(cert: (X: -230px, Y:0px, W: 84px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(clock: (X: 0px, Y:0px, W: 111px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(left: (X: -230px, Y:-115px, W: 19px, H: 36px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(original: (X: 0px, Y:-115px, W: 105px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(percent: (X: -115px, Y:0px, W: 111px, H: 111px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(pig: (X: -109px, Y:-115px, W: 111px, H: 104px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(pocket: (X: 0px, Y:-230px, W: 104px, H: 81px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(right: (X: -253px, Y:-115px, W: 19px, H: 36px, TW: 314px, TH: 311px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -58,6 +60,12 @@ $icons: map-merge($icons,(pocket: (X: 0px, Y:-230px, W: 104px, H: 81px, TW: 314p
 	background-image: url('../img/icons.png')
 	background-position: 0px 0px
 	background-size: 314px 311px
+.icon-left
+	width: 19px
+	height: 36px
+	background-image: url('../img/icons.png')
+	background-position: -230px -115px
+	background-size: 314px 311px
 .icon-original
 	width: 105px
 	height: 111px
@@ -81,4 +89,10 @@ $icons: map-merge($icons,(pocket: (X: 0px, Y:-230px, W: 104px, H: 81px, TW: 314p
 	height: 81px
 	background-image: url('../img/icons.png')
 	background-position: 0px -230px
+	background-size: 314px 311px
+.icon-right
+	width: 19px
+	height: 36px
+	background-image: url('../img/icons.png')
+	background-position: -253px -115px
 	background-size: 314px 311px
