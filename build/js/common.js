@@ -31,7 +31,6 @@ head.ready(function(){
 	});
 	
 	// Counter
-	// Counter
 	(function(){
 		$(window).load(function () {
 			$(".counter__value").each(function(index){
@@ -53,6 +52,29 @@ head.ready(function(){
 					}
 				});
 			});
+		});
+	}());
+
+	// Ajax Form
+	(function () {
+		$('.form-auction').submit(function (e) {
+			e.preventDefault();
+			var _this = $(this),
+					post_data = _this.serialize();
+
+			//Ajax post data to server
+			$.post('call.php', post_data, function(response){
+				if (response.type == 'error'){
+					// your code here
+				} else {
+					// your code here
+					_this.find('.popup__help').slideDown();
+					setTimeout(function () {
+						_this.find('.popup__help').slideUp();
+						_this.trigger('reset');
+					},5000);
+				}
+			}, 'json');
 		});
 	}());
 
